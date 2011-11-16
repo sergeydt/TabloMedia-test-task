@@ -1,2 +1,10 @@
 Working link: http://sergeydt.github.com/TabloMedia-test-task/
+Note: you may resize browser window while animation too.
+
+
+It version uses:
+ - CoffeeScript
+ - HTML5 canvas
+
+But may be written also by use SVG or jQuery + CSS.
 
