@@ -452,7 +452,7 @@
     return callback(canvas);
   };
   getSmallBoxes = function() {
-    var box, boxes, getHeight, getWidth, getX, getY, i, move;
+    var boxes, getHeight, getWidth, getX, getY, i, move;
     getWidth = function() {
       return new CoordAbsX(((new CoordRelX(1)).getAbs() - 4 * borderSpace) / 3);
     };
@@ -468,7 +468,7 @@
     move = [[1, 0], [0, -1], [-1, 0]];
     boxes = [];
     for (i = 0; i <= 2; i++) {
-      box = new DrawObjectBox({
+      boxes.push(new DrawObjectBox({
         id: i,
         color: colors[i],
         move: move[i],
@@ -476,13 +476,12 @@
         getHeight: getHeight,
         getX: getX(i),
         getY: getY
-      });
-      boxes.push(box);
+      }));
     }
     return boxes;
   };
   getBigBoxes = function() {
-    var box, boxes, getHeight, getWidth, getX, getY, i, move, x, xyArr, y, _ref;
+    var boxes, getHeight, getWidth, getX, getY, i, move, x, xyArr, y, _ref;
     getWidth = function() {
       return new CoordAbsX((new CoordRelX(1)).getAbs() - 2 * borderSpace);
     };
@@ -504,7 +503,7 @@
     boxes = [];
     for (i = 0; i <= 2; i++) {
       _ref = xyArr[i], x = _ref[0], y = _ref[1];
-      box = new DrawObjectBox({
+      boxes.push(new DrawObjectBox({
         id: i + 3,
         color: colors[i],
         move: move[i],
@@ -512,8 +511,7 @@
         getHeight: getHeight,
         getX: getX(x),
         getY: getY(y)
-      });
-      boxes.push(box);
+      }));
     }
     return boxes;
   };

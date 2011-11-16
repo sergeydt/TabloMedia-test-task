@@ -1,20 +1,3 @@
-# also svg, Jquery + css, or native JS wo coffeescript
-
-# test on different browsers.
-# what works fine here?
-# docs
-# comments?
-# remove trailing spaces
-# grammatic
-
-# event model?
-# module testing???
-# use all js patterns
-# demonstrate all my skills. all criterias
-
-
-# PUSH TO GITHUB. clean my account
-
 colors        = ['#E71212', '#509B13', '#16498E']
 strokeStyle   = '#FFF'
 borderSpace   = 50
@@ -22,7 +5,6 @@ borderRadius  = 5
 lineWidth     = 8
 animationTime = 2500
 FPS           = 60
-
 
 
 
@@ -340,7 +322,7 @@ getSmallBoxes = ()->
   move  = [[1, 0], [0, -1], [-1, 0]]
   boxes = []
   for i in [0..2]
-    box = new DrawObjectBox
+    boxes.push new DrawObjectBox
       id           : i
       color        : colors[i]
       move         : move[i]
@@ -348,7 +330,6 @@ getSmallBoxes = ()->
       getHeight    : getHeight
       getX         : getX i
       getY         : getY
-    boxes.push box
   boxes
 
 
@@ -363,7 +344,7 @@ getBigBoxes = ()->
   boxes  = []
   for i in [0..2]
     [x, y] = xyArr[i]
-    box = new DrawObjectBox
+    boxes.push new DrawObjectBox
       id           : i + 3
       color        : colors[i]
       move         : move[i]
@@ -371,7 +352,6 @@ getBigBoxes = ()->
       getHeight    : getHeight
       getX         : getX x
       getY         : getY y
-    boxes.push box
   boxes
 
 
